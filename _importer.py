@@ -33,11 +33,11 @@ def parse_and_import_signature(content, author):
         elif link.lower().startswith("site:"):
             link = link[5:]
         elif link.lower().startswith("mail:"):
-            link = "mailto:" + link[5:].strip()
+            link = f"mailto:{link[5:].strip()}"
         elif link.lower().startswith("email:"):
-            link = "mailto:" + link[6:].strip()
+            link = f"mailto:{link[6:].strip()}"
         elif link.lower().startswith("mailto:"):
-            link = "mailto:" + link[7:].strip()
+            link = f"mailto:{link[7:].strip()}"
 
         # Demangle email
         if "@" in link or "(at)" in link or "[at]" in link:
