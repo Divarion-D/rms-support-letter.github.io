@@ -113,9 +113,7 @@ for file_name in sorted(os.listdir("_data/signed")):
                     report(f"{file_name} uses a strange protocol '{protocol}' on line {i + 1}. Please use https:// or http://.")
             elif "@" in value and not value.startswith("mailto:"):
                 report(f"{file_name} seems to use a e-mail in a link on line {i + 1}. Please add 'mailto:' before the e-mail.")
-            elif value == "/#":
-                pass
-            else:
+            elif value != "/#":
                 report(f"{file_name} doesn't specify any link protocol on line {i + 1}. Please add https:// or http://.")
         else:
             report(f"{file_name} contains an unrecognized key {key} on line {i + 1}. Only 'name:' and 'link:' are supported.")
